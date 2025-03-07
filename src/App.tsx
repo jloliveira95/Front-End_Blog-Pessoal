@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import { UserProvider } from './contexts/UserContext';
 import ListaTemas from './temas/listatemas/ListaTemas';
-
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './contexts/AuthContext'; // Certifique-se de importar corretamente
 import FormTema from './temas/formtemas/FormTemas';
 import DeletarTema from './temas/cardtemas/DeletarTemas';
@@ -12,10 +12,12 @@ import ListaPostagens from './components/postagens/listapostagens/ListaPostagens
 import FormPostagem from './components/postagens/formpostagem/FormPostagem';
 import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem';
 import Perfil from './pages/perfil/Perfil';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <AuthProvider> {/* ✅ Agora todos os componentes terão acesso ao AuthContext */}
+    <AuthProvider> 
+    <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
